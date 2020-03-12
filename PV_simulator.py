@@ -20,18 +20,21 @@ file = open("results.txt","w");
 sumAll=0
 sumMeter=0
 sumPV=0
-
+lastT=0
 def callback(ch, method, properties, power):
+    global lastT
     dt = int(int(power)/100000)
+    delta= dt -lastT
+    lastT = dt
     pW = int(power) - dt*100000
-    pW = pW /3600 * 5 #normilaize to hour
+    pW = pW /3600 * delta #normilaize to hour
     print(" [x] Received "+str(dt)+" "+str(pW))
-
+    
     #get simulation value for the same t
     t,W = pv.getVal(dt)
     global sumMeter, sumAll,sumPV
     sumMeter= sumMeter + pW
-    sumPV = sumPV + W/3600*5 #normilaize to hour
+    sumPV = sumPV + W/3600*delta #normilaize to hour
     sumAll=sumPV-sumMeter
     
     print(" simulatated value:"+str(t)+", "+str(W))
