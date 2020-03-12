@@ -5,6 +5,7 @@
 ###############################################
 
 This project simulate a power meter readout and PV readout
+using rabbitMQ as a broker
 
 The meter class is simulated using random walk in randomWalk.py
 paramters:
