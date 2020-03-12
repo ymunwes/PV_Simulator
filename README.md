@@ -14,6 +14,8 @@ meter.py:
 open connetion to broker and generate values using the randomWalk
 user can send arguments for changing the delay between each step, time difference in real time, and also to plot.
 (example: python meter.py -plot=True -delay=0.000001)
+![example result](meterExample.png)
+
 pvSim.py:
 simulator class of PV using the pvlib library
 Simple simulation, with clear sky conditions
@@ -31,3 +33,4 @@ Run:
 3. python PV_simulator.py (another termianl)
 
 if needed at the end run python plotResult.py
+![example result](ExampleResult.png)
