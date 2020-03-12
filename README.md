@@ -19,6 +19,7 @@ user can send arguments for changing the delay between each step, time differenc
 pvSim.py:
 simulator class of PV using the pvlib library
 Simple simulation, with clear sky conditions
+parameter: device size, latitude, longitute, height, start/stop date and frequency
 
 PV_simulator.py:
 open connection to the borker, simulate single day of PV values, once the broker send meter values it get the simulated PV value and calculate the difference+ the integration of the meters.
