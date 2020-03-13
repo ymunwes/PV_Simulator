@@ -27,14 +27,14 @@ def callback(ch, method, properties, power):
     delta= dt -lastT
     lastT = dt
     pW = int(power) - dt*100000
-    pW = pW /3600 * delta #normilaize to hour
+    pW = pW
     print(" [x] Received "+str(dt)+" "+str(pW))
     
     #get simulation value for the same t
     t,W = pv.getVal(dt)
     global sumMeter, sumAll,sumPV
-    sumMeter= sumMeter + pW
-    sumPV = sumPV + W/3600*delta #normilaize to hour
+    sumMeter= sumMeter + pW/3600 * delta #normilaize to hour
+    sumPV = sumPV + W/3600 * delta #normilaize to hour
     sumAll=sumPV-sumMeter
     
     print(" simulatated value:"+str(t)+", "+str(W))

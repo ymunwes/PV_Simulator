@@ -9,7 +9,7 @@ from pvlib.iotools import read_tmy3
 
 
 class pvSim():
-    def __init__(self, deviceSize=9.0, latitude=49.4, longitude=8.67, height=114, dateStart='2020-03-01',dateEnd='2020-03-02', freq='1s'):
+    def __init__(self, deviceSize=12.0, latitude=49.4, longitude=8.67, height=114, dateStart='2020-03-01',dateEnd='2020-03-02', freq='1s'):
         self._deviceSize=deviceSize
         self._latitude=latitude
         self._longtitude=longitude

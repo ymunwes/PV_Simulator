@@ -6,7 +6,7 @@ import time
 
 
 class randomWalk():
-    def __init__(self, initVal=0, probDown=0.5, probUp=0.5, resolution=100, lowerLimit=0.0, upperLimit=9000.):
+    def __init__(self, initVal=0, probDown=0.2, probUp=0.8, resolution=100, lowerLimit=0.0, upperLimit=9000.):
         self._initVal = initVal
         self._probDown = probDown
         self._probUp = probUp
