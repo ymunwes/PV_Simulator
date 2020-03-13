@@ -41,3 +41,8 @@ Run:
 
 if needed at the end run python plotResult.py
 ![example result](ExampleResult.png)
+meter - simulated meter value from a random walk process
+PV simulator - output of the simulated PV device
+Meter integrated - sum of all meter values
+PV integrated - sum of all PV values
+total power - PV produced power - meter use power
