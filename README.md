@@ -13,16 +13,16 @@ The meter class is simulated using random walk in randomWalk.py
 For runnig the PV simulator install pvlib (pip install pvlib)
 
 randomWalk.py paramters: (used by meter simulator)
-initial value, probabilites to go up or down, step resolution, and limits
+Initial value, probabilites to go up or down, step resolution, and limits
 
 meter.py:
-Open connetion to broker and generate values using the randomWalk
-user can send arguments for changing the delay between each step (in sec), time difference in real time, and also to plot.
+Open connetion to broker and generate values using the randomWalk.
+User can send arguments for changing the delay between each step (in sec), time difference in real time, and also to plot.
 (example: python meter.py -plot=True -delay=0.000001)
 ![example result](meterExample.png)
 
 pvSim.py:
-Simulator class of PV using the pvlib library
+Simulator class of PV using the pvlib library (see: https://pvlib-python-dacoex.readthedocs.io/en/latest/)
 Simple simulation, with clear sky conditions
 Parameter: device size, latitude, longitute, height, start/stop date and frequency
 
