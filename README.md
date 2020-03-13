@@ -7,31 +7,36 @@
 This project simulate a power meter readout and PV readout
 using rabbitMQ as a broker
 
+Requeirments:
+Install rabbitMQ using apt-get install rabbitmq (on Mac use brew install rabbitmq)
 The meter class is simulated using random walk in randomWalk.py
-paramters:
+For runnig the PV simulator install pvlib (pip install pvlib)
+
+randomWalk.py paramters: (used by meter simulator)
 initial value, probabilites to go up or down, step resolution, and limits
 
 meter.py:
-open connetion to broker and generate values using the randomWalk
-user can send arguments for changing the delay between each step, time difference in real time, and also to plot.
+Open connetion to broker and generate values using the randomWalk
+user can send arguments for changing the delay between each step (in sec), time difference in real time, and also to plot.
 (example: python meter.py -plot=True -delay=0.000001)
 ![example result](meterExample.png)
 
 pvSim.py:
-simulator class of PV using the pvlib library
+Simulator class of PV using the pvlib library
 Simple simulation, with clear sky conditions
-parameter: device size, latitude, longitute, height, start/stop date and frequency
+Parameter: device size, latitude, longitute, height, start/stop date and frequency
 
 PV_simulator.py:
-open connection to the borker, simulate single day of PV values, once the broker send meter values it get the simulated PV value and calculate the difference+ the integration of the meters.
+Open connection to the borker, simulate single day of PV values, once the broker send meter values it get the simulated PV value and calculate the difference+ the integration of the meters.
 Save data to file results.txt
 
 plotResult.py:
-plot all values with respect to time
+Plotting all values with respect to time
 
 Run:
 1. run rabbitmq-server
-2. python meter.py (another termianl)
+2. open web browser at http://localhost:15672, initial user and password: guest guest
+2. python meter.py (another termianl, use -h to see parameters options)
 3. python PV_simulator.py (another termianl)
 
 if needed at the end run python plotResult.py
